@@ -5,7 +5,11 @@
 #/client/node_modules
 #/server/node_modules
 
-node_modules
+#removing client node_modules
+
+node_modules/
+**/node_modules/
+
 
 /.pnp
 .pnp.js
