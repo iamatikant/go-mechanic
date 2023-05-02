@@ -24,7 +24,7 @@ function App() {
   };
 
   const fetchUsers = async () => {
-    const userData = await getData("http://localhost:5000/api");
+    const userData = await getData("http://localhost:5005/api");
     console.log(userData);
     if (userData && userData.users) {
       setBackendData(userData.users);
