@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Flex } from "@pega/cosmos-react-core";
+import { Flex, Button } from "@pega/cosmos-react-core";
 import styled, { css } from "styled-components";
+import ServiceListing from "./service-listing";
 interface UserResults {
   users: string[];
 }
 
 const StyledAppContainer = styled.div(() => {
   return css`
-    flex-direction: row;
+    //flex-direction: column;
   `;
 });
 
 function App() {
   const [backendData, setBackendData] = useState<string[]>([]);
+  const [chcekState, setCheck] = useState<string>("no-check");
+  console.log(chcekState);
 
   // Checking to data set up from local server
   const getData = async (endpoint: string) => {
@@ -37,18 +40,11 @@ function App() {
   }, []);
 
   return (
-    <Flex container as={StyledAppContainer}>
+    <div>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <ul>
-            {backendData.map((item, indx) => (
-              <li key={indx}>{item}</li>
-            ))}
-          </ul>
-        </header>
+        <ServiceListing />
       </div>
-    </Flex>
+    </div>
   );
 }
 
