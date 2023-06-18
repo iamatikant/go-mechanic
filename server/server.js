@@ -10,6 +10,15 @@ app.get("/api", (req, res) => {
   res.json({ users: ["user-one", "user-two", "user-three"] });
 });
 
+app.post("/api/data", (req, res) => {
+  const { name, email } = req.body;
+  debugger;
+  res.json({
+    message: `Data received successfully name: ${name} and email: ${email}`,
+  });
+  console.log("name: ", name, "Email: ", email);
+});
+
 const PORT = process.env.PORT || 5005;
 
 app.listen(PORT, () => {
