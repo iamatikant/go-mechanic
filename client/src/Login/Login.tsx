@@ -75,6 +75,9 @@ function Login() {
             <StyleButton type="submit" className="">
               Login
             </StyleButton>
+            <StyleButton type="submit" className="">
+              Login with SSO
+            </StyleButton>
           </CardFooter>
         </Card>
       </div>
